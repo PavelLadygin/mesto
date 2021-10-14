@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pages/index.css">
+    <title>Mesto</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header bounds">
+        <img src="images/logo.svg" class="logo" alt="Логотип">
+      </header>
+      <main class="content bounds">
+        <section class="profile">
+           <img src="images/kusto.jpg" class="profile__avatar" alt="Жак-Ив">
+           <div class="profile__info">
+             <h1 class="profile__title">Жак-Ив Кусто</h1>
+             <button class="profile__edit-btn" type="button"></button>
+             <p class="profile__subtitle">Исследователь океана</p>
+           </div>
+           <button class="profile__add-btn" type="button"></button>
+        </section>
+        <section class="elements">
+          <ul class="gallary-grid">
+            <li class="gallary-grid__item">
+              <figure class="gallary-grid__card">
+                <img src="images/karachaevsk.jpg" class="gallary-grid__image" alt="Карачаевск">
+                <figcaption class="gallary-grid__caption">
+                  <span class="gallary-grid__mesto">Карачаевск</span>
+                  <button class="gallary-grid__like"></button>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="gallary-grid__item">
+              <figure class="gallary-grid__card">
+                <img src="images/dombai.jpg" class="gallary-grid__image" alt="Домбаи">
+                <figcaption class="gallary-grid__caption">
+                  <span class="gallary-grid__mesto">Домбаи</span>
+                  <button class="gallary-grid__like"></button>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="gallary-grid__item">
+              <figure class="gallary-grid__card">
+                <img src="images/photo-grid-atharva-tulsi.jpg" class="gallary-grid__image" alt="Атарва">
+                <figcaption class="gallary-grid__caption">
+                  <span class="gallary-grid__mesto">Атарва</span>
+                  <button class="gallary-grid__like"></button>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="gallary-grid__item">
+              <figure class="gallary-grid__card">
+                <img src="images/photo-grid-kamchatka-2.jpg" class="gallary-grid__image" alt="Камчатка">
+                <figcaption class="gallary-grid__caption">
+                  <span class="gallary-grid__mesto">Камчатка</span>
+                  <button class="gallary-grid__like"></button>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="gallary-grid__item">
+              <figure class="gallary-grid__card">
+                <img src="images/photo-grid-sochi.jpg" class="gallary-grid__image" alt="Сочи">
+                <figcaption class="gallary-grid__caption">
+                  <span class="gallary-grid__mesto">Сочи</span>
+                  <button class="gallary-grid__like"></button>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="gallary-grid__item">
+              <figure class="gallary-grid__card">
+                <img src="images/photo-grid-ergaki.jpg" class="gallary-grid__image" alt="Ергаки">
+                <figcaption class="gallary-grid__caption">
+                  <span class="gallary-grid__mesto">Ергаки</span>
+                  <button class="gallary-grid__like"></button>
+                </figcaption>
+              </figure>
+            </li>   
+          </ul>
+        </section>
+
+        <section class="popup">
+          <form class="popup__container">
+            <button class="popup__close"></button>
+            <h1 class="popup__title">Редактировать профиль</h1>
+            <input class="popup__input popup__input_name" type="text" name="input" placeholder="Введите имя:" value="Жак-Ив Кусто" required>
+            <input class="popup__input popup__input_job" type="text" name="input" placeholder="Введите сферу деятельности:" value="Исследователь океана" required>
+            <button class="popup__btn" type="submit">Сохранить</button>
+          </form>
+        </section>
+      <footer class="footer bounds">
+          <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+      </footer>
+    </div>
+    <script src="script/script.js"></script>
+  </body>
+</html>
