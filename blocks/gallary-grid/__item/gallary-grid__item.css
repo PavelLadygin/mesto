@@ -1,7 +1,5 @@
 .gallary-grid__item {
     max-width: 282px;
-    height: 361px;
-    object-fit: contain;
     margin: 0 auto;
     padding: 0;
     list-style: none;

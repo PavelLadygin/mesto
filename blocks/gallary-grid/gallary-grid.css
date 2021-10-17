@@ -11,5 +11,6 @@
 @media screen and (max-width: 720px) {
     .gallary-grid {
         row-gap: 20px;
+        margin: 36px auto 48px;
     }
 }

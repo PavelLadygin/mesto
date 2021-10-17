@@ -10,12 +10,12 @@
 }
 
 .profile__add-btn:hover {
-    opacity: 0.3;
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 720px) {
     .profile__add-btn {
         width: 282px;
-        background: url(../../../images/Add_big.png) center center no-repeat;
+        background: url(../../../images/Add_big.svg) center center no-repeat;
     }
 }
