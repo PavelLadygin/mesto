@@ -79,22 +79,21 @@
             </li>   
           </ul>
         </section>
-
-        <div class="popup">
-          <div class="popup__container">
-            <button class="popup__close" type="button"></button>
-            <form name="edit">
-              <h2 class="popup__title">Редактировать профиль</h2>
-              <input class="popup__input popup__input_type_name" type="text" name="inputName" placeholder="Введите имя:" required>
-              <input class="popup__input popup__input_type_job" type="text" name="inputJob" placeholder="Введите сферу деятельности:" required>
-              <button class="popup__btn" type="submit">Сохранить</button>
-            </form>
-          </div>
-        </div>
       </main>
       <footer class="footer bounds">
           <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
       </footer>
+      <div class="popup">
+        <div class="popup__container">
+          <button class="popup__close" type="button"></button>
+          <form class="popup__form" name="edit">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <input class="popup__input popup__input_type_name" type="text" name="inputName" placeholder="Введите имя:" required>
+            <input class="popup__input popup__input_type_job" type="text" name="inputJob" placeholder="Введите сферу деятельности:" required>
+            <button class="popup__btn" type="submit">Сохранить</button>
+          </form>
+        </div>
+      </div>
     </div>
     <script src="script/script.js"></script>
   </body>
