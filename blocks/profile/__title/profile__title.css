@@ -9,17 +9,18 @@
     text-align: left;
     color: #FFFFFF;
     text-overflow: ellipsis;
+    width: 100%;
     max-width: 294px;
     overflow: hidden;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 
 @media screen and (max-width: 720px) {
     .profile__title {
-        width: 248px;
+        max-width: 189px;
         font-size: 27px;
         line-height: 33px;
-        text-align: center;
+        text-align: right;
     }
 }

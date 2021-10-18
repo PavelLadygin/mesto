@@ -6,6 +6,7 @@
     width: 100%;
     margin: 22px auto 25px 30px;
     align-items: baseline;
+    box-sizing: border-box;
 }
 
 
