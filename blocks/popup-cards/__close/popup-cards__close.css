@@ -1,0 +1,27 @@
+.popup-cards__close {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 32px;
+    height: 32px;
+    background: url(../../../images/close.svg) center center no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 0;
+    margin: 0;
+}
+
+.popup-cards__close:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 720px) {
+    .popup-cards__close {
+        width: 20px;
+        height: 20px;
+        top: -36px;
+        right: 1px;
+    }
+}

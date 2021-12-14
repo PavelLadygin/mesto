@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pages/index.css">
+    <script src="script/script.js" defer></script>
     <title>Mesto</title>
   </head>
   <body>
@@ -23,60 +24,7 @@
         </section>
         <section class="elements">
           <ul class="gallary-grid">
-            <li class="gallary-grid__item">
-              <article class="gallary-grid__card">
-                <img src="images/karachaevsk.jpg" class="gallary-grid__image" alt="Карачаевск">
-                <div class="gallary-grid__caption">
-                  <h2 class="gallary-grid__mesto">Карачаевск</h2>
-                  <button class="gallary-grid__like" type="button"></button>
-                </div>
-              </article>
-            </li>
-            <li class="gallary-grid__item">
-              <article class="gallary-grid__card">
-                <img src="images/dombai.jpg" class="gallary-grid__image" alt="Домбаи">
-                <div class="gallary-grid__caption">
-                  <h2 class="gallary-grid__mesto">Домбаи</h2>
-                  <button class="gallary-grid__like" type="button"></button>
-                </div>
-              </article>
-            </li>
-            <li class="gallary-grid__item">
-              <article class="gallary-grid__card">
-                <img src="images/photo-grid-atharva-tulsi.jpg" class="gallary-grid__image" alt="Атарва">
-                <div class="gallary-grid__caption">
-                  <h2 class="gallary-grid__mesto">Атарва</h2>
-                  <button class="gallary-grid__like" type="button"></button>
-                </div>
-              </article>
-            </li>
-            <li class="gallary-grid__item">
-              <article class="gallary-grid__card">
-                <img src="images/photo-grid-kamchatka-2.jpg" class="gallary-grid__image" alt="Камчатка">
-                <div class="gallary-grid__caption">
-                  <h2 class="gallary-grid__mesto">Камчатка</h2>
-                  <button class="gallary-grid__like" type="button"></button>
-                </div>
-              </article>
-            </li>
-            <li class="gallary-grid__item">
-              <article class="gallary-grid__card">
-                <img src="images/photo-grid-sochi.jpg" class="gallary-grid__image" alt="Сочи">
-                <div class="gallary-grid__caption">
-                  <h2 class="gallary-grid__mesto">Сочи</h2>
-                  <button class="gallary-grid__like" type="button"></button>
-                </div>
-              </article>
-            </li>
-            <li class="gallary-grid__item">
-              <article class="gallary-grid__card">
-                <img src="images/photo-grid-ergaki.jpg" class="gallary-grid__image" alt="Ергаки">
-                <div class="gallary-grid__caption">
-                  <h2 class="gallary-grid__mesto">Ергаки</h2>
-                  <button class="gallary-grid__like" type="button"></button>
-                </div>
-              </article>
-            </li>   
+        
           </ul>
         </section>
       </main>
@@ -94,7 +42,39 @@
           </form>
         </div>
       </div>
+      <div class="popup-cards">
+        <div class="popup-cards__container">
+          <button class="popup-cards__close" type="button"></button>
+          <form class="popup__form" name="add">
+            <h2 class="popup__title">Новое место</h2>
+            <input class="popup__input popup-cards__input_type_mesto" type="text" name="inputMesto" placeholder="Название:" required>
+            <input class="popup__input popup-cards__input_type_img" type="text" name="inputImg" placeholder="Ссылка на картинку:" required>
+            <button class="popup-cards__btn" type="submit">Создать</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup-img">
+        <div class="popup-img__container">
+            <button class="popup-img__close" type="button"></button>
+            <div>
+                <img class="popup-img__img" alt="" src="">
+            </div>
+           <h2 class="popup-img__title"></h2>
+        </div>
+      </div>
+  
+      <template class="template">
+        <li class="gallary-grid__item">
+          <article class="gallary-grid__card">
+            <img src="" class="gallary-grid__image" alt="">
+            <button class="gallary-grid__delete" type="button"></button>
+            <div class="gallary-grid__caption">
+              <h2 class="gallary-grid__mesto"></h2>
+              <button class="gallary-grid__like" type="button"></button>
+            </div>
+          </article>
+        </li>
+      </template>
     </div>
-    <script src="script/script.js"></script>
   </body>
 </html>
