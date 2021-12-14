@@ -1,4 +1,4 @@
-.popup__title{
+.form__title{
     max-width: 330px;
     margin: 0 auto;
     padding: 33px 0 55px;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 720px) {
-    .popup__title {
+    .form__title {
         max-width: 238px;
         margin: 25px auto 75px;
         padding: 0;

@@ -2,9 +2,9 @@ let editButton = document.querySelector('.profile__edit-btn');
 let closeButton = document.querySelector('.popup__close');
 let popup = document.querySelector('.popup');
 let popupCards = document.querySelector('.popup-cards');
-let formElement = document.querySelector('.popup__form');
-let nameInput = document.querySelector('.popup__input_type_name');
-let jobInput = document.querySelector('.popup__input_type_job');
+let formElement = document.querySelector('.form');
+let nameInput = document.querySelector('.form__input_type_name');
+let jobInput = document.querySelector('.form__input_type_job');
 let title = document.querySelector('.profile__title');
 let subtitle = document.querySelector('.profile__subtitle');
 let cardContainerEl = document.querySelector('.gallary-grid');
@@ -12,10 +12,10 @@ let templateEl = document.querySelector('.template');
 
 let addButton = document.querySelector('.profile__add-btn');
 let closeButtonCards = document.querySelector('.popup-cards__close');
-let inputMesto = document.querySelector('.popup-cards__input_type_mesto');
-let inputLink = document.querySelector('.popup-cards__input_type_img');
+let inputMesto = document.querySelector('.form__input_type_mesto');
+let inputLink = document.querySelector('.form__input_type_img');
 
-let buttonAddCard = document.querySelector('.popup-cards__btn');
+let buttonAddCard = document.querySelector('.form__btn_add');
 
 const popupImage = document.querySelector('.popup-img');
 const closeImageButton = popupImage.querySelector('.popup-img__close');

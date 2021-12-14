@@ -1,4 +1,4 @@
-.popup__btn {
+.form__btn {
     display: flex;
     width: 100%;
     max-width: 358px;
@@ -20,12 +20,12 @@
     border-radius: 2px;
 }
 
-.popup__btn:hover {
+.form__btn:hover {
     opacity: 0.8;
 }
 
 @media screen and (max-width: 720px) {
-    .popup__btn {
+    .form__btn {
         width: 238px;
         height: 46px;
         font-size: 14px;
