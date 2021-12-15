@@ -9,16 +9,16 @@ const closeCardsButton = cardsPopup.querySelector('.popup__close');
 const cardsForm = cardsPopup.querySelector('.form_add');
 
 
-let nameInput = document.querySelector('.form__input_type_name');
-let jobInput = document.querySelector('.form__input_type_job');
-let title = document.querySelector('.profile__title');
-let subtitle = document.querySelector('.profile__subtitle');
+const nameInput = document.querySelector('.form__input_type_name');
+const jobInput = document.querySelector('.form__input_type_job');
+const title = document.querySelector('.profile__title');
+const subtitle = document.querySelector('.profile__subtitle');
 
 
-let cardContainerEl = document.querySelector('.gallary-grid');
-let templateEl = document.querySelector('.template');
-let inputMesto = document.querySelector('.form__input_type_mesto');
-let inputImg = document.querySelector('.form__input_type_img');
+const cardContainerEl = document.querySelector('.gallary-grid');
+const templateEl = document.querySelector('.template');
+const inputMesto = document.querySelector('.form__input_type_mesto');
+const inputImg = document.querySelector('.form__input_type_img');
 
 const imgItem = document.querySelector('.gallary-grid__image');
 const popupImage = document.querySelector('.popup_img');
@@ -79,10 +79,10 @@ function render() {
 
 function getItem(item){
     const newItem = templateEl.content.cloneNode(true);
-    let newTitle = newItem.querySelector('.gallary-grid__mesto');
+    const newTitle = newItem.querySelector('.gallary-grid__mesto');
     newTitle.textContent = item.name;
 
-    let newImage =  newItem.querySelector('.gallary-grid__image');
+    const newImage =  newItem.querySelector('.gallary-grid__image');
     newImage.src = item.link;
     newImage.alt = item.name;
 
@@ -93,7 +93,8 @@ function getItem(item){
     likeBtn.addEventListener('click', like);
     
     newImage.addEventListener('click', () => {
-      imageEL.src = newImage.src;
+      imageEL.src = item.link;
+      imageEL.alt = item.name;
       titleImage.textContent = newTitle.textContent;
       openPopup(popupImage);
      
