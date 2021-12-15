@@ -7,74 +7,71 @@
     <script src="script/script.js" defer></script>
     <title>Mesto</title>
   </head>
-  <body>
-    <div class="page">
-      <header class="header bounds">
-        <img src="images/logo.svg" class="logo" alt="Логотип">
-      </header>
-      <main class="content bounds">
-        <section class="profile">
-           <img src="images/kusto.jpg" class="profile__avatar" alt="Аватар">
-           <div class="profile__info">
-             <h1 class="profile__title">Жак-Ив Кусто</h1>
-             <button aria-label="Edit" class="profile__edit-btn" type="button"></button>
-             <p class="profile__subtitle">Исследователь океана</p>
-           </div>
-           <button class="profile__add-btn" type="button"></button>
-        </section>
-        <section class="elements">
-          <ul class="gallary-grid">
-        
-          </ul>
-        </section>
-      </main>
-      <footer class="footer bounds">
-          <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
-      </footer>
-      <div class="popup">
-        <div class="popup__container">
-          <button class="popup__close" type="button"></button>
-          <form class="form" name="edit">
-            <h2 class="form__title">Редактировать профиль</h2>
-            <input class="form__input form__input_type_name" type="text" name="inputName" placeholder="Введите имя:" required>
-            <input class="form__input form__input_type_job" type="text" name="inputJob" placeholder="Введите сферу деятельности:" required>
-            <button class="form__btn" type="submit">Сохранить</button>
-          </form>
-        </div>
+  <body class="page">
+    <header class="header">
+      <img src="images/logo.svg" class="logo" alt="Логотип">
+    </header>
+    <main class="content">
+      <section class="profile">
+          <img src="images/kusto.jpg" class="profile__avatar" alt="Аватар">
+          <div class="profile__info">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button aria-label="Edit" class="profile__edit-btn" type="button"></button>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+          <button class="profile__add-btn" type="button"></button>
+      </section>
+      <section class="elements">
+        <ul class="gallary-grid">
+      
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+    </footer>
+    <div class="popup popup_profile">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <form class="form" name="edit">
+          <h2 class="form__title">Редактировать профиль</h2>
+          <input class="form__input form__input_type_name" type="text" name="inputName" placeholder="Введите имя:" required>
+          <input class="form__input form__input_type_job" type="text" name="inputJob" placeholder="Введите сферу деятельности:" required>
+          <button class="form__btn" type="submit">Сохранить</button>
+        </form>
       </div>
-      <div class="popup-cards">
-        <div class="popup-cards__container">
-          <button class="popup-cards__close" type="button"></button>
-          <form class="form" name="add">
-            <h2 class="form__title">Новое место</h2>
-            <input class="form__input form__input_type_mesto" type="text" name="inputMesto" placeholder="Название:" required>
-            <input class="form__input form__input_type_img" type="text" name="inputImg" placeholder="Ссылка на картинку:" required>
-            <button class="form__btn form__btn_add" type="submit">Создать</button>
-          </form>
-        </div>
-      </div>
-      <div class="popup-img">
-        <div class="popup-img__container">
-            <button class="popup-img__close" type="button"></button>
-            <div>
-                <img class="popup-img__img" alt="#" src="#">
-            </div>
-           <h2 class="popup-img__title">#</h2>
-        </div>
-      </div>
-  
-      <template class="template">
-        <li class="gallary-grid__item">
-          <article class="gallary-grid__card">
-            <img src="#" class="gallary-grid__image" alt="#">
-            <button class="gallary-grid__delete" type="button"></button>
-            <div class="gallary-grid__caption">
-              <h2 class="gallary-grid__mesto"></h2>
-              <button class="gallary-grid__like" type="button"></button>
-            </div>
-          </article>
-        </li>
-      </template>
     </div>
+    <div class="popup popup_cards">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <form class="form form_add" name="add">
+          <h2 class="form__title">Новое место</h2>
+          <input class="form__input form__input_type_mesto" type="text" name="inputMesto" placeholder="Название:" required>
+          <input class="form__input form__input_type_img" type="text" name="inputImg" placeholder="Ссылка на картинку:" required>
+          <button class="form__btn" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_img">
+      <div class="popup-img">
+          <button class="popup__close" type="button"></button>
+          <div>
+              <img class="popup-img__img" alt="#" src="#">
+              <h2 class="popup-img__title">#</h2>
+          </div>
+      </div>
+    </div>
+    <template class="template">
+      <li class="gallary-grid__item">
+        <article class="gallary-grid__card">
+          <img src="#" class="gallary-grid__image" alt="#">
+          <button class="gallary-grid__delete" type="button"></button>
+          <div class="gallary-grid__caption">
+            <h2 class="gallary-grid__mesto"></h2>
+            <button class="gallary-grid__like" type="button"></button>
+          </div>
+        </article>
+      </li>
+    </template>
   </body>
 </html>

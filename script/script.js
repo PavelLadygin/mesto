@@ -1,44 +1,43 @@
-let editButton = document.querySelector('.profile__edit-btn');
-let closeButton = document.querySelector('.popup__close');
-let popup = document.querySelector('.popup');
-let popupCards = document.querySelector('.popup-cards');
-let formElement = document.querySelector('.form');
+const editButton = document.querySelector('.profile__edit-btn');
+const profilePopup = document.querySelector('.popup_profile');
+const closeProfileButton = profilePopup.querySelector('.popup__close');
+const profileForm = profilePopup.querySelector('.form');
+
+const addButton = document.querySelector('.profile__add-btn');
+const cardsPopup = document.querySelector('.popup_cards');
+const closeCardsButton = cardsPopup.querySelector('.popup__close');
+const cardsForm = cardsPopup.querySelector('.form_add');
+
+
 let nameInput = document.querySelector('.form__input_type_name');
 let jobInput = document.querySelector('.form__input_type_job');
 let title = document.querySelector('.profile__title');
 let subtitle = document.querySelector('.profile__subtitle');
+
+
 let cardContainerEl = document.querySelector('.gallary-grid');
 let templateEl = document.querySelector('.template');
-
-let addButton = document.querySelector('.profile__add-btn');
-let closeButtonCards = document.querySelector('.popup-cards__close');
 let inputMesto = document.querySelector('.form__input_type_mesto');
-let inputLink = document.querySelector('.form__input_type_img');
+let inputImg = document.querySelector('.form__input_type_img');
 
-let buttonAddCard = document.querySelector('.form__btn_add');
-
-const popupImage = document.querySelector('.popup-img');
-const closeImageButton = popupImage.querySelector('.popup-img__close');
+const imgItem = document.querySelector('.gallary-grid__image');
+const popupImage = document.querySelector('.popup_img');
+const closeImageButton = popupImage.querySelector('.popup__close');
 const titleImage = popupImage.querySelector('.popup-img__title');
 const imageEL = popupImage.querySelector('.popup-img__img');
 
 function editPopup() {
     nameInput.value = title.textContent;
     jobInput.value = subtitle.textContent;
-    popup.classList.add('popup_opened');
+    openPopup(profilePopup);
 }
 
-function closePopup() {
-    popup.classList.remove('popup_opened');
-}
 
-function formSubmitHandler (evt) {
+function handleProfileFormSubmit (evt) {
     evt.preventDefault();
-    let valueInputName = nameInput.value;
-    let valueInputJob = jobInput.value;
-    title.textContent = valueInputName;
-    subtitle.textContent = valueInputJob;
-    closePopup();    
+    title.textContent = nameInput.value;
+    subtitle.textContent = jobInput.value;
+    closePopup(profilePopup);    
 }
 
 
@@ -78,24 +77,14 @@ function render() {
         cardContainerEl.append(...html);
   }
 
-  function openPopupImg() {
-      popupImage.classList.add('popup-img_opened');
-  }
-  
-  function closeImagePopup() {
-      popupImage.classList.remove('popup-img_opened');
-      imageEL.src = '';
-      titleImage.textContent = '';
-  }
-  
 function getItem(item){
     const newItem = templateEl.content.cloneNode(true);
-    let Mesto = newItem.querySelector('.gallary-grid__mesto');
-    Mesto.textContent = item.name;
+    let newTitle = newItem.querySelector('.gallary-grid__mesto');
+    newTitle.textContent = item.name;
 
-    let Image =  newItem.querySelector('.gallary-grid__image');
-    Image.src = item.link;
-    Image.alt = item.name;
+    let newImage =  newItem.querySelector('.gallary-grid__image');
+    newImage.src = item.link;
+    newImage.alt = item.name;
 
     const removeBtn = newItem.querySelector('.gallary-grid__delete');
     removeBtn.addEventListener('click', handleDelete);
@@ -103,30 +92,32 @@ function getItem(item){
     const likeBtn = newItem.querySelector('.gallary-grid__like');
     likeBtn.addEventListener('click', like);
     
-    Image.addEventListener('click', () => {
-      openPopupImg();
-      imageEL.src = Image.src;
-      titleImage.textContent = Mesto.textContent;
+    newImage.addEventListener('click', () => {
+      imageEL.src = newImage.src;
+      titleImage.textContent = newTitle.textContent;
+      openPopup(popupImage);
+     
     });
     return newItem;
 }
 
-function addPopup() {
-    popupCards.classList.add('popup-cards_opened');
+function openPopup(popup) {
+    popup.classList.add('popup_opened');
 }
 
-function closePopupCards() {
-    popupCards.classList.remove('popup-cards_opened');
+function closePopup(popup) {
+    popup.classList.remove('popup_opened');
 }
 
-function handleAdd(){
-  const ValueInputMesto = inputMesto.value;
-  const ValueInputLink = inputLink.value;
-  const listCard = getItem({name: ValueInputMesto, link: ValueInputLink});
+function handleAdd(evt){
+  evt.preventDefault();
+  const valueInputMesto = inputMesto.value;
+  const valueInputImg = inputImg.value;
+  const listCard = getItem({name: valueInputMesto, link: valueInputImg});
   cardContainerEl.prepend(listCard);
   inputMesto.value ='';
-  inputLink.value ='';
-  closePopupCards();
+  inputImg.value ='';
+  closePopup(cardsPopup);
 }
 
 function handleDelete(event){
@@ -139,13 +130,12 @@ function like(evt) {
   evt.target.classList.toggle('gallary-grid__like_active');
 }
 
-addButton.addEventListener('click', addPopup); 
-closeButtonCards.addEventListener('click', closePopupCards); 
-formElement.addEventListener('submit', formSubmitHandler); 
 editButton.addEventListener('click', editPopup); 
-closeButton.addEventListener('click', closePopup); 
-buttonAddCard.addEventListener('click', handleAdd);
-closeImageButton.addEventListener('click', closeImagePopup);
-  
+closeProfileButton.addEventListener('click', function(){closePopup(profilePopup);}); 
+closeCardsButton.addEventListener('click', function(){closePopup(cardsPopup);});
+profileForm.addEventListener('submit', handleProfileFormSubmit);
+addButton.addEventListener('click', function(){openPopup(cardsPopup);});
+cardsForm.addEventListener('submit', handleAdd);
+closeImageButton.addEventListener('click', function(){;closePopup(popupImage);});
 
 render();
