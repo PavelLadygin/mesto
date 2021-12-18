@@ -7,6 +7,7 @@ const addButton = document.querySelector('.profile__add-btn');
 const cardsPopup = document.querySelector('.popup_cards');
 const closeCardsButton = cardsPopup.querySelector('.popup__close');
 const cardsForm = cardsPopup.querySelector('.form_add');
+const cardsBtn = cardsPopup.querySelector('.form__btn');
 
 
 const nameInput = document.querySelector('.form__input_type_name');
@@ -110,13 +111,15 @@ function getItem(item){
 }
 
 function openPopup(popup) {
-    popup.classList.add('popup_opened');
-    document.addEventListener('click', closePopupOverlay);
-    document.addEventListener('keydown', closePopupEsc);
+  document.addEventListener('click', closePopupOverlay);
+  document.addEventListener('keydown', closePopupEsc);
+  popup.classList.add('popup_opened');
 }
 
 function closePopup(popup) {
-    popup.classList.remove('popup_opened');
+  document.addEventListener('keydown', closePopupEsc);
+  document.addEventListener('click', closePopupOverlay);
+  popup.classList.remove('popup_opened');
 }
 
 function resetPopup(popup) {
@@ -137,7 +140,10 @@ function handleAdd(evt){
   inputMesto.value ='';
   inputImg.value ='';
   closePopup(cardsPopup);
-  document.addEventListener('keydown', closePopupEsc);
+  cardsForm.reset();
+  cardsBtn.classList.add('form__btn_disabled');
+  cardsBtn.disabled = true;
+ 
 }
 
 function handleDelete(event){
@@ -152,7 +158,8 @@ function like(evt) {
 
 function closePopupEsc(evt) {
   if(evt.key === 'Escape') {
-    closePopup(document.querySelector('.popup_opened'));
+    const popupEnable = document.querySelector('.popup_opened');
+    closePopup(popupEnable);
   }
 }
 
@@ -165,19 +172,15 @@ function closePopupOverlay(evt) {
 
 editButton.addEventListener('click', () => {
   resetPopup(profilePopup); 
-  editPopup();
+  editPopup(profilePopup);
 });
 
 closeProfileButton.addEventListener('click', function(){
   closePopup(profilePopup);
-  document.addEventListener('keydown', closePopupEsc);
-  document.addEventListener('click', closePopupOverlay);
 }); 
 
 closeCardsButton.addEventListener('click', function(){
   closePopup(cardsPopup);
-  document.addEventListener('keydown', closePopupEsc);
-  document.addEventListener('click', closePopupOverlay);
 });
 
 profileForm.addEventListener('submit', handleProfileFormSubmit);
@@ -186,7 +189,9 @@ addButton.addEventListener('click', function(){
   openPopup(cardsPopup);
 });
 cardsForm.addEventListener('submit', handleAdd);
-closeImageButton.addEventListener('click', function(){;closePopup(popupImage);});
+closeImageButton.addEventListener('click', function(){
+  closePopup(popupImage);
+});
 
 
 
