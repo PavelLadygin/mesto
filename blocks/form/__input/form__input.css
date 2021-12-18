@@ -1,11 +1,7 @@
 .form__input {
-    display: flex;
     width: 100%;
-    max-width: 358px;
-    height: 27px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    margin: 0 auto 30px;
     padding: 0 0 13px 0;
     box-sizing: border-box;
     color: #000000;
@@ -16,21 +12,7 @@
     line-height: 17px;
 }
 
-.form__input:last-of-type {
-    margin: 0 auto 48px;
-}
-
 .form__input:focus {
     outline: none;
 }
 
-@media screen and (max-width: 720px) {
-    .form__input {
-        max-width: 238px;
-        margin: 0px auto 30px;
-    }
-
-    .form__input:last-of-type {
-        margin: 0 auto 45px;
-    }
-}

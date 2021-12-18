@@ -1,0 +1,20 @@
+.form__field{
+    width: 100%;
+    max-width: 358px;
+    margin: 0 auto 30px;
+}
+
+.form__field:last-of-type {
+    margin: 0 auto 48px;
+}
+
+@media screen and (max-width: 720px) {
+    .form__field {
+        max-width: 238px;
+        margin: 0px auto 30px;
+    }
+
+    .form__field:last-of-type {
+        margin: 0 auto 45px;
+    }
+}

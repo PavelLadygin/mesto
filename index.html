@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pages/index.css">
     <script src="script/script.js" defer></script>
+    <script src="script/validate.js" defer></script>
     <title>Mesto</title>
   </head>
   <body class="page">
@@ -31,23 +32,37 @@
         <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
     <div class="popup popup_profile">
+      <div class="popup__overlay"></div>
       <div class="popup__container">
         <button class="popup__close" type="button"></button>
         <form class="form" name="edit">
           <h2 class="form__title">Редактировать профиль</h2>
-          <input class="form__input form__input_type_name" type="text" name="inputName" placeholder="Введите имя:" required>
-          <input class="form__input form__input_type_job" type="text" name="inputJob" placeholder="Введите сферу деятельности:" required>
-          <button class="form__btn" type="submit">Сохранить</button>
+          <label class="form__field">
+            <input class="form__input form__input_type_name" type="text" name="inputName" placeholder="Введите имя:"  minlength="2" maxlength="40" required>
+            <span class="form__input-error" id="inputName-error"></span>
+          </label>
+          <label class="form__field">
+            <input class="form__input form__input_type_job" type="text" name="inputJob" placeholder="Введите сферу деятельности:" minlength="2" maxlength="200" required>
+            <span class="form__input-error" id="inputJob-error"></span>
+          </label>
+          <button class="form__btn form__btn_disabled" type="submit" disabled>Сохранить</button>
         </form>
       </div>
     </div>
     <div class="popup popup_cards">
+      <div class="popup__overlay"></div>
       <div class="popup__container">
         <button class="popup__close" type="button"></button>
         <form class="form form_add" name="add">
           <h2 class="form__title">Новое место</h2>
-          <input class="form__input form__input_type_mesto" type="text" name="inputMesto" placeholder="Название:" required>
-          <input class="form__input form__input_type_img" type="text" name="inputImg" placeholder="Ссылка на картинку:" required>
+          <label class="form__field">
+            <input class="form__input form__input_type_mesto" type="text" name="inputMesto" placeholder="Название:" minlength="2" maxlength="30" required>
+            <span class="form__input-error" id="inputMesto-error"></span>
+          </label>
+          <label class="form__field">
+            <input type="url" class="form__input form__input_type_img" type="text" name="inputImg" placeholder="Ссылка на картинку:" required>
+            <span class="form__input-error" id="inputImg-error"></span>
+          </label>
           <button class="form__btn" type="submit">Создать</button>
         </form>
       </div>
