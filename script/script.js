@@ -29,7 +29,7 @@ const imageEL = popupImage.querySelector('.popup-img__img');
 
 const editBtn = profileForm.querySelector('.form__btn');
 
-const inputError = Array.from(document.querySelectorAll('.form__input-error'));
+const inputErrors = Array.from(document.querySelectorAll('.form__input-error'));
 const inputs = Array.from(document.querySelectorAll('.form__input'));
 
 function editPopup() {
@@ -117,13 +117,13 @@ function openPopup(popup) {
 }
 
 function closePopup(popup) {
-  document.addEventListener('keydown', closePopupEsc);
-  document.addEventListener('click', closePopupOverlay);
+  document.removeEventListener('keydown', closePopupEsc);
+  document.removeEventListener('click', closePopupOverlay);
   popup.classList.remove('popup_opened');
 }
 
 function resetPopup(popup) {
-  inputError.forEach((error) => {
+  inputErrors.forEach((error) => {
     error.textContent = '';
   });
   inputs.forEach((errorLine) => {
